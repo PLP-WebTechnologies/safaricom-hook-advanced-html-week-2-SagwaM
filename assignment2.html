@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Webpage and Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        video, audio {
+            width: 50%;
+            margin: 50px 0;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="radio"], input[type="checkbox"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .gender {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        .terms {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent default form submission
+            alert("Registration successful! Redirecting to the welcome page...");
+            window.location.href = "welcome.html"; // Redirect to the welcome page
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Multimedia Webpage</h1>
+
+    <!-- Audio Element -->
+    <h2>Audio Player</h2>
+    <audio controls>
+        <source src="joan_audio.opus" type="audio/mpeg">
+        <source src="audiofile.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <br><br>
+
+    <!-- Video Element -->
+    <h2>Video Player</h2>
+    <video controls poster="poster-image.jpeg">
+        <source src="wrapped.mp4" type="video/mp4">
+        <source src="video.webm" type="video/webm">
+        Your browser does not support the video element.
+    </video>
+
+    <br><br>
+
+    <h1>Registration Form</h1>
+
+    <form onsubmit="handleSubmit(event)">
+        <!-- Full Name -->
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required maxlength="50" placeholder="Enter your full name">
+
+        <!-- Email Address -->
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+
+        <!-- Password -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required minlength="8" placeholder="Enter your password">
+
+        <!-- Age -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required min="18" placeholder="Enter your age">
+
+        <!-- Gender -->
+        <label>Gender:</label>
+        <div class="gender">
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male">Male</label>
+        </div>
+        <div class="gender">
+            <input type="radio" id="female" name="gender" value="Female" required>
+            <label for="female">Female</label>
+        </div>
+        <div class="gender">
+            <input type="radio" id="other" name="gender" value="Other" required>
+            <label for="other">Other</label>
+        </div>
+
+        <!-- Terms and Conditions -->
+        <div class="terms">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to the Terms and Conditions</label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">Register</button>
+    </form>
+
+</body>
+</html>
